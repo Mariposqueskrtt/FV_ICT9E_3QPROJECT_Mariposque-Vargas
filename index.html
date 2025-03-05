@@ -9,10 +9,14 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://i.pinimg.com/1200x/af/a6/d4/afa6d4cd78732c7c06ba0db2dde94aeb.jpg') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/736x/6f/ac/27/6fac2719e2d8ea11d1dea87f63f88edf.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
-            padding-top: 80px; 
+            padding-top: 80px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
         .navbar {
             background-color: white;
@@ -52,6 +56,19 @@
             padding: 20px;
             font-size: 24px;
         }
+
+        .content {
+            flex: 1;
+            text-align: center;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +91,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Train.html">Train Schedule</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="Contact.html">Contact Us</a>
                     </li>
                 </ul>
@@ -86,35 +103,39 @@
             </div>
         </div>
     </nav>
-<center>
-    <header>
-        <p><span style="color: white; font-size: 35px; font-family:serif ;background-color:#e1c0e1";>Fare Guide</span></p>
-    </header>
-    <img src="https://urban-map.com/wp-content/uploads/UM-PM-Manila-01.jpg" width="400" height="300">
-   
-   <p><span style="color: white; font-size: 35px; font-family:serif ;background-color:#e1c0e1";>Leaving From:</span></p>
-    <select class="form-select"  id="leave">
-        <option value="none">Espana</option>
-        <option value="1">Cubao</option>
-        <option vlaue="2">Fairview</option>
-        <option value="3">Pasay</option>
-    </select>
-    <br>
-    <p><span style="color: white; font-size: 35px; font-family:serif ;background-color:#e1c0e1";>Going To:</span></p>
-   <select class="form-select"  id="Going">
-        <option value="none">Espana</option>
-        <option value="1">Cubao</option>
-        <option vlaue="2">Fairview</option>
-        <option value="3">Pasay</option>
-    </select>
-    <br>
-    <button type="Submit" class="btn btn-success" onclick="appear()">Regular Fee</button>
-    <button type="Submit" class="btn btn-success" onclick="appear()">Discounted Fee</button>
-    <p><span style="color: white; font-size: 35px; font-family:serif ;background-color:#e1c0e1";>Price</span></p>
-   <select class="form-select"  id="price">
-
-
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <div class="content">
+        <header>
+            <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Fare Guide</span></p>
+        </header>
+        <img src="https://urban-map.com/wp-content/uploads/UM-PM-Manila-01.jpg" width="400" height="300">
+        
+        <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Leaving From:</span></p>
+        <select class="form-select" id="leave">
+            <option value="none">Espana</option>
+            <option value="1">Cubao</option>
+            <option value="2">Fairview</option>
+            <option value="3">Pasay</option>
+        </select>
+        <br>
+        <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Going To:</span></p>
+        <select class="form-select" id="Going">
+            <option value="none">Espana</option>
+            <option value="1">Cubao</option>
+            <option value="2">Fairview</option>
+            <option value="3">Pasay</option>
+        </select>
+        <br>
+        <button type="button" class="btn btn-success" onclick="appear()">Regular Fee</button>
+        <button type="button" class="btn btn-success" onclick="appear()">Discounted Fee</button>
+        <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Price</span></p>
+        <select class="form-select" id="price"></select>
+    </div>
+    
+    <footer>
+        <p>Created by Alexandra Vargas and Janine Mariposque  9-Emerald</p>
+    </footer>
+    
 </body>
 </html>
+
