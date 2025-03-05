@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://i.pinimg.com/736x/6f/ac/27/6fac2719e2d8ea11d1dea87f63f88edf.jpg') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/1200x/d5/09/0b/d5090b5371f87a266daa4cc5e01feaa0.jpg') no-repeat center center fixed;
             background-size: cover;
             font-family: Arial, sans-serif;
             padding-top: 80px;
@@ -131,6 +131,66 @@
         <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Price</span></p>
         <select class="form-select" id="price"></select>
     </div>
+        
+        <div class="section-header" onclick="toggleSection('ticketPrice')">Ticket Price</div>
+        <div id="ticketPrice" class="section-content">
+            <div class="mb-3">
+                <label class="form-label">Choose your seat</label>
+                <select id="seat" class="form-select">
+                    <option value="General Admission">General seats</option>
+                    <option value="VIP">VIP</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Choose an option</label>
+                <select id="discount" class="form-select">
+                    <option value="1">Regular</option>
+                    <option value="0.2">Student</option>
+                    <option value="0.8">Senior Citizen</option>
+                </select>
+            </div>
+            <button class="btn btn-danger btn-wide" onclick="showTicketPrice()" type="button">Ticket Price</button>
+        </div>
+        
+        <div class="section-header" onclick="toggleSection('printTicket')">Print
+            Ticket</div>
+        <div id="printTicket" class="section-content">
+            <img class="ticket-img" src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t1.15752-9/482396770_1800433300713789_6544299073048228244_n.png?stp=dst-png_s640x640&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=AAFCzihpg64Q7kNvgG2CsNZ&_nc_oc=Adj0vEHZyhctLjpukanfRDtMNgROMkNSaS-6LuHu49ldNFapyRT4woUFZ7naNpyqa8s&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl25-1.fna&oh=03_Q7cD1wHSr1JRFWeSMjBzQ-3zA0Tk02cB8rDvVEar04MDyGTljg&oe=67F04AD7" alt="Train Ticket">
+            <button class="btn btn-wide mt-3 buy-more-btn" onclick="refreshPage()" type="button">Buy more tickets</button>
+        </div>
+    </form>
+
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section.style.display === "none" || section.style.display === "") {
+                section.style.display = "block";
+            } else {
+                section.style.display = "none";
+            }
+        }
+
+        function showTicketPrice() {
+            var seat = document.getElementById("seat").value;
+            var discount = Number(document.getElementById("discount").value);
+            var basePrice = (seat === "VIP") ? 1200 : 380;
+            var finalPrice = basePrice * discount;
+            alert("Your ticket price is: PHP " + finalPrice.toFixed(2));
+        }
+
+        function submitInfo() {
+            var name = document.getElementById("name").value;
+            if (name.trim() !== "") {
+                alert("Thank you for buying, " + name + "!");
+            } else {
+                alert("Please enter your name");
+            }
+        }
+
+        function refreshPage() {
+            location.reload();
+        }
+    </script>
     
     <footer>
         <p>Created by Alexandra Vargas and Janine Mariposque  9-Emerald</p>
