@@ -177,7 +177,7 @@
         function showTicketPrice() {
             var seat = document.getElementById("seat").value;
             var discount = Number(document.getElementById("discount").value);
-            var basePrice = (seat === "VIP") ? 25 : 20;
+            var basePrice = (seat === "VIP") ? 18 : 20;
             var finalPrice = basePrice * discount;
             alert("Your ticket price is: PHP " + finalPrice.toFixed(2));
         }
