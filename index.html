@@ -57,6 +57,8 @@
             font-size: 24px;
         }
 
+
+
         .content {
             flex: 1;
             text-align: center;
@@ -75,6 +77,7 @@
             height: auto;
             display: block;
             margin: 10px auto;
+
 
 
 
@@ -117,36 +120,54 @@
         <header>
             <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Fare Guide</span></p>
         </header>
-        <img src="https://urban-map.com/wp-content/uploads/UM-PM-Manila-01.jpg" width="400" height="300">
+        <img src="https://www.deiville.com/wp-content/uploads/2023/03/map-of-lrt-line-1-2-and-mrt-3-stations-922x1024.jpg" width="400" height="300">
         
         <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Leaving From:</span></p>
         <select class="form-select" id="leave">
-            <option value="none">Espana</option>
-            <option value="1">Cubao</option>
-            <option value="2">Fairview</option>
-            <option value="3">Pasay</option>
+            <option value="none">Recto</option>
+            <option value="1">Legarda</option>
+            <option value="2">Pureza</option>
+            <option value="3">V. Mapa</option>
+            <option value="4">J. Ruiz</option>
+            <option value="5">Gilmore</option>
+            <option value="6">Betty Go-Belmonte</option>
+            <option value="7">Araneta-Cubao</option>
+            <option value="8">Anonas</option>
+            <option value="9">Katipunan</option>
+            <option value="10">Santolan</option>
+            <option value="11">Marikina</option>
+            <option value="12">Antipolo</option>
         </select>
         <br>
         <p><span style="color: white; font-size: 35px; font-family: serif; background-color:#e1c0e1;">Going To:</span></p>
         <select class="form-select" id="Going">
-            <option value="none">Espana</option>
-            <option value="1">Cubao</option>
-            <option value="2">Fairview</option>
-            <option value="3">Pasay</option>
+            <option value="none">Recto</option>
+            <option value="1">Legarda</option>
+            <option value="2">Pureza</option>
+            <option value="3">V. Mapa</option>
+            <option value="4">J. Ruiz</option>
+            <option value="5">Gilmore</option>
+            <option value="6">Betty Go-Belmonte</option>
+            <option value="7">Araneta-Cubao</option>
+            <option value="8">Anonas</option>
+            <option value="9">Katipunan</option>
+            <option value="10">Santolan</option>
+            <option value="11">Marikina</option>
+            <option value="12">Antipolo</option>
         </select>
     </div>
         <center>
         <div class="section-header" onclick="toggleSection('ticketPrice')">Ticket Price</div>
         <div id="ticketPrice" class="section-content">
             <div class="mb-3">
-                <label class="form-label">Choose your seat</label>
+                <label class="form-label"><span style="color: white; font-style: italic; font-size: 20px;">Choose your seat</label>
                 <select id="seat" class="form-select">
                     <option value="General Admission">General seats</option>
                     <option value="VIP">VIP</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label class="form-label">Choose an option</label>
+                <label class="form-label"><span style="color: white; font-style: italic; font-size: 20px;">Choose an option</label>
                 <select id="discount" class="form-select">
                     <option value="1">Regular</option>
                     <option value="0.2">Student</option>
@@ -155,9 +176,10 @@
             </div>
             <button class="btn btn-success btn-wide" onclick="showTicketPrice()" type="button">Ticket Price</button>
         </div>
-        
-        <div class="section-header" onclick="toggleSection('printTicket')">Print
+        <br>
+        <div class="section-header onclick="toggleSection('printTicket')"><span style="color: white ; font-style: italic; font-size: 20px;">Print
             Ticket</div>
+
         <div id="printTicket" class="section-content">
             <img class="ticket-img" src="https://scontent.fmnl25-6.fna.fbcdn.net/v/t1.15752-9/481698630_943447737847320_8809689239424380752_n.png?stp=dst-png_s640x640&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=13eg3-nneYgQ7kNvgF-JS1_&_nc_oc=Adhs4s5YzntdRI30arDXUB_1BD0oqo81J36iShslfNK9FDTZj1N4yYTimqofSdOpMKQ&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fmnl25-6.fna&oh=03_Q7cD1wGNg2CCBD8qRh2kyvAbwVMBUAesKUQrlXTOINNh5qkbMA&oe=67F04293" alt="Train Ticket">
             <button class="btn btn-success mt-3 buy-more-btn" onclick="refreshPage()" type="button">Buy more tickets</button>
@@ -177,7 +199,7 @@
         function showTicketPrice() {
             var seat = document.getElementById("seat").value;
             var discount = Number(document.getElementById("discount").value);
-            var basePrice = (seat === "VIP") ? 18 : 20;
+            var basePrice = (seat === "VIP") ? 1200 : 380;
             var finalPrice = basePrice * discount;
             alert("Your ticket price is: PHP " + finalPrice.toFixed(2));
         }
@@ -198,7 +220,7 @@
     
     <footer>
         <p>Created by Alexandra Vargas and Janine Mariposque  9-Emerald</p>
+        <a href="https://docs.google.com/document/d/14p-VELuzsSk5QYJhkiOV86OSVzLoLV0edIRizidaKiE/edit?tab=t.0">Sources</a>
     </footer>
     
 </body>
-</html>
